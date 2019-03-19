@@ -76,7 +76,7 @@ function init(){
 
   var gui = new dat.GUI();
   var f1 = gui.addFolder('Scale');
-  f1.add(controller, 'scaleX', , 30).onChange( function() {
+  f1.add(controller, 'scaleX',  30).onChange( function() {
     mesh.scale.x = (controller.scaleX);
   });
   f1.add(controller, 'scaleY', 0.1, 30).onChange( function() {
