@@ -36,6 +36,16 @@ function init() {
 	});
 
 	var geometry = new THREE.SphereGeometry( 30, 32, 16 );
+	group = new THREE.Group();
+	for( var i=0; i < 1000; i ++){
+		var mesh1 = new THREE.Mesh( geometry,material);
+		mesh1.position.x = Math.random()*2000 - 1000;
+		mesh1.position.y = Math.random()*2000 - 1000;
+		mesh1.position.z = Math.random()*2000 - 1000;
+
+		group.add(mesh1);
+		scene.add(group);
+	}
 
 
 
@@ -46,9 +56,9 @@ function init() {
 	for ( i = 0; i < faceVertexUvs.length; i ++ ) {
 		var uvs = faceVertexUvs[ i ];
 		var face = geometry.faces[ i ];
-		for ( var j = 0; j < 3; j ++ ) {
-			uvs[ j ].x = face.vertexNormals[ j ].x * 0.5 + 0.5;
-			uvs[ j ].y = face.vertexNormals[ j ].y * 0.5 + 0.5;
+		for ( var sphere = 0; sphere < 3; sphere ++ ) {
+			uvs[ sphere ].x = face.vertexNormals[ sphere ].x * 0.5 + 0.5;
+			uvs[ sphere ].y = face.vertexNormals[ sphere ].y * 0.5 + 0.5;
 		}
 
 
