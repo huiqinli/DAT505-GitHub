@@ -62,9 +62,7 @@ function drawFrame(){
 
   //for each
 cubes.forEach(function(c,i) {
-c.rotation.x = rot;
-c.rotation.z = rot;
-
+  c.rotation.x += rot;
 });
 
 renderer.render(scene, camera);

@@ -5,11 +5,13 @@ var camera, scene, renderer;
 var image;
 var mouseX = 0, mouseY = 0;
 var container, stats;
-var spheresNum = 10;
-var spheres = [];
+var cubes = [];
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
+
+
+
 
 init();
 animate();
@@ -21,13 +23,14 @@ function init() {
 	scene = new THREE.Scene();
 
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
-	camera.position.set( 0, 0, 150 );
+	camera.position.set( 0, 0, 200 );
   scene.add( camera ); // since light is child of camera
 
 	scene.add( new THREE.AmbientLight( 0xffffff, 0.2 ) );
 	var light = new THREE.PointLight( 0xffffff, 1 );
 	camera.add( light );
 
+  for(a=0;a<8;a++){
 	var material = new THREE.MeshPhongMaterial( {
 		color: 0xffffff,
 		specular: 0x050505,
@@ -36,16 +39,7 @@ function init() {
 	});
 
 	var geometry = new THREE.SphereGeometry( 30, 32, 16 );
-	group = new THREE.Group();
-	for( var i=0; i < 1000; i ++){
-		var mesh1 = new THREE.Mesh( geometry,material);
-		mesh1.position.x = Math.random()*2000 - 1000;
-		mesh1.position.y = Math.random()*2000 - 1000;
-		mesh1.position.z = Math.random()*2000 - 1000;
 
-		group.add(mesh1);
-		scene.add(group);
-	}
 
 
 
@@ -60,13 +54,17 @@ function init() {
 			uvs[ sphere ].x = face.vertexNormals[ sphere ].x * 0.5 + 0.5;
 			uvs[ sphere ].y = face.vertexNormals[ sphere ].y * 0.5 + 0.5;
 		}
+	}
 
-
+	for( var i=0; i < 180; i ++){
 	mesh = new THREE.Mesh( geometry, material );
+	mesh.position.x = Math.random()*2000 - 1000;
+	mesh.position.y = Math.random()*2000 - 1000;
+	mesh.position.z = Math.random()*2000 - 1000;
 
-	scene.add( mesh );
-	spheres.push(mesh);
-
+	scene.add(mesh);
+	cubes.push(mesh);
+}
 }
 
 	renderer = new THREE.WebGLRenderer();
@@ -85,23 +83,26 @@ function animate() {
 
 function render() {
 	console.log(window.innerHeight)
-	mesh.rotation.x = mouseY/window.innerHeight*2;
-	mesh.rotation.y = mouseX/window.innerWidth*2;
 
+	cubes.forEach(function(c,i){
+  cubes[i].rotation.x = mouseY/window.innerHeight*2;
+	cubes[i].rotation.y = mouseX/window.innerWidth*2;
+});
 
 
 	renderer.render( scene, camera );
 }
 
 function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-  camera.aspect = window.innerWidth / window.innerHeight;
-  renderer.setSize( window.innerWidth, window.innerHeight );
+	windowHalfX = window.innerWidth / 2;
+	windowHalfY = window.innerHeight / 2;
+	camera.aspect = window.innerWidth / window.innerHeight;
+	renderer.setSize( window.innerWidth, window.innerHeight );
 }
+
 
 function onDocumentMouseMove( event ) {
 	console.log(event.clientX);
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
 }
