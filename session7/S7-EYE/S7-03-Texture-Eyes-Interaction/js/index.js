@@ -30,7 +30,7 @@ function init() {
 	var light = new THREE.PointLight( 0xffffff, 1 );
 	camera.add( light );
 
-  for(a=0;a<8;a++){
+  for(s = 0; s < 10; s ++){
 	var material = new THREE.MeshPhongMaterial( {
 		color: 0xffffff,
 		specular: 0x050505,
@@ -56,7 +56,7 @@ function init() {
 		}
 	}
 
-	for( var i=0; i < 180; i ++){
+	for( var i = 0; i < 180; i ++){
 	mesh = new THREE.Mesh( geometry, material );
 	mesh.position.x = Math.random()*2000 - 1000;
 	mesh.position.y = Math.random()*2000 - 1000;
@@ -66,7 +66,6 @@ function init() {
 	cubes.push(mesh);
 }
 }
-
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
