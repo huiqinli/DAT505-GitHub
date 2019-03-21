@@ -102,6 +102,6 @@ function onWindowResize() {
 
 function onDocumentMouseMove( event ) {
 	console.log(event.clientX);
-	mouseX = event.clientX - windowHalfX;
-	mouseY = event.clientY - windowHalfY;
+	mouseX = event.clientX;
+	mouseY = event.clientY;
 }
