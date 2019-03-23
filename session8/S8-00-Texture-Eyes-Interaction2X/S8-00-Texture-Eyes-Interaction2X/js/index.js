@@ -120,22 +120,21 @@ function render() {
 		if (mouseY<810) eyes[1].rotation.x = map_range(mouseY, 0, 810, -1.14, -0.25);
 		else eyes[1].rotation.x = map_range(mouseY, 810, window.innerHeight, -0.25, 0);
 
-		if (mouseX<140) eyes[2].rotation.y = map_range(mouseX, 0, -140, 0.2, 0.25);
-		else eyes[2].rotation.y = map_range(mouseX, -140, window.innerWidth, 0.25, 1.14);
-		if (mouseY<810) eyes[2].rotation.x = map_range(mouseY, 0, -810, 1.14, -0.25);
-		else eyes[2].rotation.x = map_range(mouseY, -810, window.innerHeight, -0.25, 0);
+		if (mouseX<-900) eyes[2].rotation.y = map_range(mouseX, 0, -900, -0.2, -0.25);
+		else eyes[2].rotation.y = map_range(mouseX, 1100, window.innerWidth, 0.25, 1.14);
+		if (mouseY<500) eyes[2].rotation.x = map_range(mouseY, 0, 500, -1.14, -0.25);
+		else eyes[2].rotation.x = map_range(mouseY, 500, window.innerHeight, -0.25, 0);
 
 
 		if (mouseX<140) eyes[3].rotation.y = map_range(mouseX, 0, 140, -0.2, 0.25);
 		else eyes[3].rotation.y = map_range(mouseX, 140, window.innerWidth, 0.25, 1.14);
-		if (mouseY<810) eyes[3].rotation.x = map_range(mouseY, 0, 810, 0, 0.25);
-		else eyes[3].rotation.x = map_range(mouseY, 810, window.innerHeight, 0.25, 1.14);
+		if (mouseY<35) eyes[3].rotation.x = map_range(mouseY, 0, 35, 0, 0.25);
+		else eyes[3].rotation.x = map_range(mouseY, 35, window.innerHeight, 0.25, 1.14);
 
-		if (mouseX<810) eyes[4].rotation.y = map_range(mouseX, 0, 140, -0.2, -0.25);
-		else eyes[4].rotation.y = map_range(mouseX, 140, window.innerWidth,
-			0.25, 1.14);
-		if (mouseY<35) eyes[4].rotation.x = map_range(mouseY, 0, -35, 0, 0.25);
-		else eyes[4].rotation.x = map_range(mouseY, -35, window.innerHeight, 0.25, 1.14);
+		if (mouseX<900) eyes[4].rotation.y = map_range(mouseX, 0, 900, -0.2, -0.25);
+		else eyes[4].rotation.y = map_range(mouseX, 900, window.innerWidth, -0.25, 1.14);
+		if (mouseY<-500) eyes[4].rotation.x = map_range(mouseY, 0, -500, 0, 0.25);
+		else eyes[4].rotation.x = map_range(mouseY, -500, window.innerHeight, -0.25, 1.14);
   }
 	renderer.render( scene, camera );
 }
