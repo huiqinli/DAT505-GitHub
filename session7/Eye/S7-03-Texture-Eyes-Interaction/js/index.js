@@ -24,48 +24,48 @@ function init() {
 
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.set( 0, 0, 200 );
-  scene.add( camera ); // since light is child of camera
+	scene.add( camera ); // since light is child of camera
 
 	scene.add( new THREE.AmbientLight( 0xffffff, 0.2 ) );
 	var light = new THREE.PointLight( 0xffffff, 1 );
 	camera.add( light );
 
-  for(s = 0; s < 8; s ++){
-	var material = new THREE.MeshPhongMaterial( {
-		color: 0xffffff,
-		specular: 0x050505,
-		shininess: 50,
-		map: THREE.ImageUtils.loadTexture('images/eye.png'),
-	});
+	for(s = 0; s < 8; s ++){
+		var material = new THREE.MeshPhongMaterial( {
+			color: 0xffffff,
+			specular: 0x050505,
+			shininess: 50,
+			map: THREE.ImageUtils.loadTexture('images/eye.png'),
+		});
 
-	var geometry = new THREE.SphereGeometry( 30, 32, 16 );
-
-
+		var geometry = new THREE.SphereGeometry( 30, 32, 16 );
 
 
-  // modify UVs to accommodate MatCap texture
 
 
-	var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
-	for ( i = 0; i < faceVertexUvs.length; i ++ ) {
-		var uvs = faceVertexUvs[ i ];
-		var face = geometry.faces[ i ];
-		for ( var sphere = 0; sphere < 3; sphere ++ ) {
-			uvs[ sphere ].x = face.vertexNormals[ sphere ].x * 0.5 + 0.5;
-			uvs[ sphere ].y = face.vertexNormals[ sphere ].y * 0.5 + 0.5;
+		// modify UVs to accommodate MatCap texture
+
+
+		var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
+		for ( i = 0; i < faceVertexUvs.length; i ++ ) {
+			var uvs = faceVertexUvs[ i ];
+			var face = geometry.faces[ i ];
+			for ( var sphere = 0; sphere < 3; sphere ++ ) {
+				uvs[ sphere ].x = face.vertexNormals[ sphere ].x * 0.5 + 0.5;
+				uvs[ sphere ].y = face.vertexNormals[ sphere ].y * 0.5 + 0.5;
+			}
+		}
+
+		for( var i = 0; i < 50; i ++){
+			mesh = new THREE.Mesh( geometry, material );
+			mesh.position.x = Math.random()*1000 - 500;
+			mesh.position.y = Math.random()*1000 - 500;
+			mesh.position.z = Math.random()*1000 - 500;
+
+			scene.add(mesh);
+			cubes.push(mesh);
 		}
 	}
-
-	for( var i = 0; i < 100; i ++){
-	mesh = new THREE.Mesh( geometry, material );
-	mesh.position.x = Math.random()*2000 - 500;
-	mesh.position.y = Math.random()*2000 - 500;
-	mesh.position.z = Math.random()*2000 - 500;
-
-	scene.add(mesh);
-	cubes.push(mesh);
-}
-}
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -84,9 +84,9 @@ function render() {
 	console.log(window.innerHeight)
 
 	cubes.forEach(function(c,i){
-  cubes[i].rotation.x = mouseY/window.innerHeight*2;
-	cubes[i].rotation.y = mouseX/window.innerWidth*2;
-});
+		cubes[i].rotation.x = mouseY/window.innerHeight*2;
+		cubes[i].rotation.y = mouseX/window.innerWidth*2;
+	});
 
 
 	renderer.render( scene, camera );
