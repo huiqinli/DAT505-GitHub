@@ -26,13 +26,7 @@ scene.add(light1);
 
 var light2 = new THREE.PointLight(0xffffff, 0.5);
 scene.add(light2);
-// ------------------------------------------------
 
-// -----------------------------------------------------------------------------
-
-// ------------------------------------------------
-// Main Content
-// ------------------------------------------------
 
 // Create a Cube Mesh with basic material ---------
 var geometry = new THREE.CylinderGeometry(5, 100, 100);
@@ -95,7 +89,6 @@ var material = new THREE.MeshPhongMaterial({
 */
 
 var texture = new THREE.TextureLoader().load( "texture1.jpg" );
-
 var material9 = new THREE.MeshBasicMaterial( { map: texture} );
 
 

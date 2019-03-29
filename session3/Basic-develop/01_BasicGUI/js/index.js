@@ -58,7 +58,7 @@ function init(){
 
   lightingSystem();
 
-  //GUI - Setup the GUI controller
+
   var controller = new function() {
     this.scaleX = 1;
     this.scaleY = 1;
@@ -73,7 +73,7 @@ function init(){
     //this.castShadow = true;
     this.boxOpacity = 1;
   }();
-
+//GUI - Setup the GUI controller
   var gui = new dat.GUI();
   var f1 = gui.addFolder('Scale');
   f1.add(controller, 'scaleX',  30).onChange( function() {
