@@ -170,12 +170,12 @@ function animate(ts) {
   requestAnimationFrame(animate);
   //var delta = clock.getDelta()
 
-  particle.rotation.x += 0.0000;
-  particle.rotation.y -= 0.0040;
-  circle.rotation.x -= 0.0020;
-  circle.rotation.y -= 0.0030;
-  skelet.rotation.x -= 0.0010;
-  skelet.rotation.y += 0.0020;
+  particle.rotation.x += 0;
+  particle.rotation.y -= 0.004;
+  circle.rotation.x -= 0.002;
+  circle.rotation.y -= 0.003;
+  skelet.rotation.x -= 0.001;
+  skelet.rotation.y += 0.004;
   //renderer.clear();
 
   //renderer.render( scene, camera )
