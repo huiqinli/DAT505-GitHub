@@ -2,8 +2,7 @@
 var scene, camera, renderer;
 var geometry1, wireframe1, line1, material1;
 var geometry2, material2, mesh1;
-//var geometry3, material3, plane1;
-//var geometry4, wireframe2, line2,material4;
+
 
 
 
