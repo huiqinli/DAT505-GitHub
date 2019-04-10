@@ -23,8 +23,10 @@ function init() {
 	container = document.createElement( 'div' );
 	document.body.appendChild( container );
 
+	// Create an empty scene --------------------------
 	scene = new THREE.Scene();
 
+	// Create a basic perspective camera --------------
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.set( 0, 0, 150 );
   scene.add( camera ); // since light is child of camera
@@ -33,6 +35,7 @@ function init() {
 	var light = new THREE.PointLight( 0xffffff, 1 );
 	camera.add( light );
 
+//create a sphere mesh with material
 	var geometry = new THREE.SphereGeometry( 30, 32, 16 );
 
 	var material = new THREE.MeshPhongMaterial( {
@@ -61,19 +64,19 @@ function init() {
 		yPos[i] = Math.random() * 100 - 50;
 
 		xPos [0] = 0;
-		yPos [0] = 0;
+		yPos [0] = 0;//middle
 
 		xPos [1] = -50;
-		yPos [1] = -50;//左下
+		yPos [1] = -50;//left down
 
 		xPos [2] = 50;
-		yPos [2] = -50;//右下
+		yPos [2] = -50;//right down
 
 		xPos [3] = -50;
-		yPos [3] = 50;//左上
+		yPos [3] = 50;//left up
 
 		xPos [4] = 50;
-		yPos [4] = 50;//右上
+		yPos [4] = 50;//right up
 
 		xPosMap[i] = map_range(xPos[i], -50, 50, 0, window.innerWidth);
 		yPosMap[i] = map_range(yPos[i], -50, 50, 0, window.innerHeight);
@@ -87,13 +90,14 @@ function init() {
 		mesh.scale.x = randSize;
 		mesh.scale.y = randSize;
 		mesh.scale.z = randSize;
-
+//add mesh to the scene
 		scene.add( mesh );
 		eyes.push( mesh );
 	}
 
 	//console.log(mesh);
 
+	// Create a renderer with Antialiasing ------------
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );

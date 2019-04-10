@@ -58,7 +58,7 @@ function init() {
         mesh.scale.set(sizeRand,sizeRand,sizeRand);
         mesh.position.set(Math.random()*800-400, Math.random()*800-400, Math.random()*800-400);
         mesh.rotation.y = -Math.PI/Math.random()*4;
-
+//add mesh to the scene
         scene.add(mesh);
         objects.push(mesh); //Add to the array so that we can access for raycasting
   		});
@@ -67,6 +67,7 @@ function init() {
 
   raycaster = new THREE.Raycaster();
 
+  // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
@@ -132,5 +133,7 @@ function render() {
     if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
     INTERSECTED = null;
   }
+
+  // Render the scene
   renderer.render( scene, camera );
 }

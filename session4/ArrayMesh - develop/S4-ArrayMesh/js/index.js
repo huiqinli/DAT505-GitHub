@@ -5,15 +5,16 @@ var cubes = [];
 var randomSpeedX = [];
 
 function init() {
+  // Create an empty scene --------------------------
   scene = new THREE.Scene();
 
   var W = window.innerWidth,
   H = window.innerHeight;
-
+  // Create a basic perspective camera --------------
   camera = new THREE.PerspectiveCamera(45, W / H, .1, 1000);
   camera.position.set(20, 20, 85);
   camera.lookAt(scene.position);
-
+  //create light
   var spotLight = new THREE.SpotLight(0xFFFFFF);
   spotLight.position.set(0, 2000, 0);
   scene.add(spotLight);
@@ -24,7 +25,7 @@ function init() {
   ambLight.add(spotLight);
   scene.add(ambLight);
 
-
+  // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setClearColor(0x000000);
   renderer.setSize(W, H);
@@ -57,7 +58,7 @@ function init() {
 
       var randomValueX = (Math.random() * 0.5) - 0.25;
       randomSpeedX.push(randomValueX);
-
+      // Add mesh to scene
       scene.add(box);
       cubes.push(box);
     }
@@ -92,6 +93,7 @@ function drawFrame(){
   console.log(scaleCube)
   //cubes[6].rotation.x += randomSpeedX[6];
   //cubes[18].rotation.x += randomSpeedX[18];
+  // Render the scene
   renderer.render(scene, camera);
 
 }

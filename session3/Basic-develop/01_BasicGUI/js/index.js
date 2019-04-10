@@ -37,7 +37,7 @@ function init(){
   camera.lookAt(scene.position);
   scene.add(camera);
 
-  // Create a Cube Mesh with material ---------
+  // Create a torusbuffer Mesh with material  ---------
   geometry = new THREE.TorusBufferGeometry(6, 2, 6, 60);
   color = Math.random() * 0xffffff;
 
@@ -54,6 +54,7 @@ function init(){
   mesh.scale.set(1, 1, 1);
   mesh.doubleSided = true;
   mesh.castShadow = true;
+  // Add mesh to scene
   scene.add(mesh);
 
   lightingSystem();
@@ -140,6 +141,7 @@ function render () {
   renderer.render(scene, camera);
 };
 
+//add lightingSystem
 function lightingSystem(){
   var object3d  = new THREE.DirectionalLight('white', 0.15);
   object3d.position.set(6,3,9);
@@ -164,5 +166,6 @@ function lightingSystem(){
   spotLight.shadow.camera.near = 1;
   spotLight.shadow.camera.far = 4000;
   spotLight.shadow.camera.fov = 45;
+  // Add spotlight to scene
   scene.add( spotLight );
 }

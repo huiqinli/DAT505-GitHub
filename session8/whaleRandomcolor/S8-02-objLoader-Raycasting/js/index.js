@@ -14,9 +14,10 @@ animate();
 function init() {
   container = document.createElement( 'div' );
   document.body.appendChild( container );
-
+  // Create a basic perspective camera --------------
   camera = new THREE.PerspectiveCamera( 100, window.innerWidth / window.innerHeight, 1, 10000 );
 
+  // Create an empty scene --------------------------
   scene = new THREE.Scene();
   scene.background = new THREE.Color( 0xf0f0f0 );
 
@@ -25,6 +26,7 @@ function init() {
   light.position.set( 1, 1, 1 ).normalize();
   scene.add( light );
 
+//create a boxbuffer mesh with material
   var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
 
   for (var i=0; i<500; i++){
@@ -49,7 +51,7 @@ function init() {
         mesh.scale.set(sizeRand,sizeRand,sizeRand);
         mesh.position.set(Math.random()*800-400, Math.random()*800-400, Math.random()*800-400);
         mesh.rotation.y = -Math.PI/Math.random()*4;
-
+        //add mesh to the scene
         scene.add(mesh);
         objects.push(mesh); //Add to the array so that we can access for raycasting
   		});
@@ -58,6 +60,7 @@ function init() {
 
   raycaster = new THREE.Raycaster();
 
+  // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
@@ -135,6 +138,6 @@ function render() {
     INTERSECTED = null;
   }
 
-
+  // Render the scene
   renderer.render( scene, camera );
 }

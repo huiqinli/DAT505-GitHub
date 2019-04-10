@@ -24,14 +24,17 @@ function setup() {
 }
 
 function setupThreeJS() {
+  // Create an empty scene --------------------------
   scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x9db3b5, 0.02);
 
+  // Create a basic perspective camera --------------
   camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
   camera.position.y = 400;
   camera.position.z = 400;
   camera.rotation.x = -45 * Math.PI / 180;
 
+  // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer({antialias: true});
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.shadowMapEnabled = true;

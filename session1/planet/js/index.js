@@ -51,24 +51,27 @@ function geometry(){
   // Add mesh to scene
   scene.add( mesh1 );
 
-
+  // Create a sphere Mesh with basic material ---------
   geometry2 = new THREE.SphereGeometry(100, 100, 100);
   material2 = new THREE.MeshBasicMaterial( { color: "#4EFEB3" } );
   mesh2 = new THREE.Mesh( geometry2, material2 );
   mesh2.position.z = -1000;
   mesh2.position.y = -100;
 
+  // Add mesh to scene
   scene.add( mesh2 );
 
-
+  // Create a cone Mesh with basic material ---------
   geometry3 = new THREE.ConeGeometry(200, 200, 15);
   material3 = new THREE.MeshBasicMaterial( { color: "#FFA042" } );
   mesh3 = new THREE.Mesh( geometry3, material3 );
   mesh3.position.z = -1000;
   mesh3.position.y = -100;
 
+  // Add mesh to scene
   scene.add( mesh3 );
 
+  // Create a sphere Mesh with basic material ---------
   geometry4 = new THREE.SphereGeometry(40, 10, 3);
   material4 = new THREE.MeshBasicMaterial( { color: "#743A3A" } );
   mesh4 = new THREE.Mesh( geometry4, material4 );
@@ -76,8 +79,10 @@ function geometry(){
   mesh4.position.x = -200;
   mesh4.position.y = 100;
 
+  // Add mesh to scene
   scene.add( mesh4 );
 
+  // Create a cylinder Mesh with basic material ---------
   geometry5 = new THREE.CylinderGeometry( 1, 5, 10 );
   material5 = new THREE.MeshBasicMaterial( { color: "#C07AB8" } );
   mesh5 = new THREE.Mesh( geometry5, material5 );
@@ -85,8 +90,10 @@ function geometry(){
   mesh5.position.x = -235;
   mesh5.position.y = 100;
 
+  // Add mesh to scene
   scene.add( mesh5 );
 
+  // Create a cylinder Mesh with basic material ---------
   geometry6 = new THREE.CylinderGeometry( 1, 5, 10 );
   material6 = new THREE.MeshBasicMaterial( { color: "#C07AB8" } );
   mesh6 = new THREE.Mesh( geometry6, material6 );
@@ -94,8 +101,10 @@ function geometry(){
   mesh6.position.x = -170;
   mesh6.position.y = 100;
 
+  // Add mesh to scene
   scene.add( mesh6 );
 
+  // Create a cylinder Mesh with basic material ---------
   geometry7 = new THREE.CylinderGeometry( 50, 19, 10 );
   material7 = new THREE.MeshBasicMaterial( { color: "#DEFFCC" } );
   mesh7 = new THREE.Mesh( geometry7, material7 );
@@ -103,8 +112,10 @@ function geometry(){
   mesh7.position.x = -200;
   mesh7.position.y = 100;
 
+  // Add mesh to scene
   scene.add( mesh7 );
 
+  // Create a cylinder Mesh with basic material ---------
   //BLUE
   geometry8 = new THREE.CylinderGeometry(105, 105, 20);
   material8 = new THREE.MeshBasicMaterial( { color: "#46A3FF" } );
@@ -112,8 +123,10 @@ function geometry(){
   mesh8.position.z = -1000;
   mesh8.position.y = -100;
 
+  // Add mesh to scene
   scene.add( mesh8 );
 
+  // Create a sphere Mesh with basic material ---------
   geometry9 = new THREE.SphereGeometry(70, 70, 70);
   material9 = new THREE.MeshBasicMaterial( { color: "#CA8EC2" } );
   mesh9 = new THREE.Mesh( geometry9, material9 );
@@ -121,8 +134,10 @@ function geometry(){
   mesh9.position.y = 120;
   mesh9.position.x = 350;
 
+  // Add mesh to scene
   scene.add( mesh9 );
 
+  // Create a cylinder Mesh with basic material ---------
   geometry10 = new THREE.CylinderGeometry( 75, 75, 20 );
   material10 = new THREE.MeshBasicMaterial( { color: "#FFBFFF" } );
   mesh10 = new THREE.Mesh( geometry10, material10 );
@@ -130,15 +145,17 @@ function geometry(){
   mesh10.position.x = 350;
   mesh10.position.y = 120;
 
+  // Add mesh to scene
   scene.add( mesh10 );
 
+  // Create a cylinder Mesh with basic material ---------
   geometry11 = new THREE.CylinderGeometry( 105, 105, 10 );
   material11 = new THREE.MeshBasicMaterial( { color: "#FFFF37" } );
   mesh11 = new THREE.Mesh( geometry11, material11 );
   mesh11.position.z = -1300;
   mesh11.position.x = 350;
   mesh11.position.y = 105;
-
+  // Add mesh to scene
   scene.add( mesh11 );
 
 
@@ -146,12 +163,13 @@ function geometry(){
 
 // Render Loop
 var render = function () {
-  requestAnimationFrame( render );
+  requestAnimationFrame( render )
 
-  mesh1.rotation.x += 0.07; //Continuously rotate the mesh
+//Continuously rotate the mesh
+  mesh1.rotation.x += 0.07;
   mesh1.rotation.y += 0.07;
 
-  mesh3.rotation.y += 0.07; //Continuously rotate the mesh
+  mesh3.rotation.y += 0.07;
 
 
   mesh4.rotation.z += 0.1;
@@ -164,12 +182,8 @@ var render = function () {
   mesh6.rotation.z += 0.07;
 
 
-
-
-
   mesh7.rotation.z += 0.01;
   mesh7.rotation.X += 0.03;
-
 
 
   mesh11.rotation.z += 0.1;

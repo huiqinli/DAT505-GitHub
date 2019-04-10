@@ -28,8 +28,10 @@ var light2 = new THREE.PointLight(0xffffff, 0.5);
 scene.add(light2);
 
 
-// Create a Cube Mesh with basic material ---------
+// Create a cylinder Mesh with basic material ---------
 var geometry = new THREE.CylinderGeometry(5, 100, 100);
+
+// Create a Cube Mesh with basic material ---------
 
 var geometry1 = new THREE.CubeGeometry(10, 10, 500);
 
@@ -50,7 +52,7 @@ var material = new THREE.MeshLambertMaterial({
 });
 */
 
-//MATERIAL 4:
+//material:
 var texture = new THREE.TextureLoader().load( "texture3.jpg" );
 var material = new THREE.MeshPhongMaterial({map: texture});
 
@@ -66,6 +68,7 @@ var material = new THREE.MeshLambertMaterial({
   specularMap: null
 });
 */
+//material2
 var texture = new THREE.TextureLoader().load( "texture5.jpg" );
 var material2 = new THREE.MeshBasicMaterial( { map: texture} );
 
@@ -87,7 +90,7 @@ var material = new THREE.MeshPhongMaterial({
   specularMap: null
 });
 */
-
+//material9
 var texture = new THREE.TextureLoader().load( "texture1.jpg" );
 var material9 = new THREE.MeshBasicMaterial( { map: texture} );
 
@@ -138,14 +141,9 @@ mesh12.position.y = -200;
 
 // Add mesh to scene
 scene.add( mesh1 );
-
 scene.add( mesh4 );
-
 scene.add( mesh6 );
 scene.add( mesh7 );
-
-
-
 scene.add( mesh12 );
 
 
@@ -172,7 +170,6 @@ var render = function () {
 
   mesh7.rotation.x = rot; //Continuously rotate the mesh
   mesh7.rotation.y = rot;
-
 
 
 
