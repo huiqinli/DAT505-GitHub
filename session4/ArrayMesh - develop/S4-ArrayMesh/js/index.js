@@ -77,6 +77,7 @@ function drawFrame(){
   if (scaleCube >8) scaleCube = -5;
 
   cubes.forEach(function(c,i) {
+    //Continuously rotate the mesh
   c.rotation.x += 0.7;
   c.rotation.y += 0.1;
   c.rotation.z += 0.1;

@@ -83,6 +83,7 @@ function drawFrame(){
 
   //for each
 torusbuffers.forEach(function(c,i) {
+  //Continuously rotate the mesh
     c.rotation.x = rot;
     c.rotation.y = rot+0.1;
 

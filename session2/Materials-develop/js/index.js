@@ -109,13 +109,10 @@ mesh1.position.z = -1000;
 mesh1.position.y = 0;
 mesh1.position.x = 100;
 
-
 var mesh4 = new THREE.Mesh( geometry, material9 );
 mesh4.position.z = -1000;
 mesh4.position.x = 100;
 mesh4.position.y = 200;
-
-
 
 var mesh6 = new THREE.Mesh( geometry1, material );
 mesh6.position.z = -1000;
@@ -126,11 +123,6 @@ var mesh7 = new THREE.Mesh( geometry2, material9 );
 mesh7.position.z = -1000;
 mesh7.position.x = -100;
 mesh7.position.y = 0;
-
-
-
-
-
 
 var mesh12 = new THREE.Mesh( geometry, material9 );
 mesh12.position.z = -1000;

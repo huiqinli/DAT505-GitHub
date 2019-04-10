@@ -23,10 +23,6 @@ function init(){
   camera = new THREE.PerspectiveCamera(35, window.innerWidth/window.innerHeight, 300, 10000 );
 
 
-
-
-
-
   // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer({antialias:true});
 

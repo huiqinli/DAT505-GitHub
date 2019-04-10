@@ -23,7 +23,7 @@ function init() {
   ambLight.position.set(0,1000,0);
   ambLight.add(spotLight);
   scene.add(ambLight);
-  
+
   // Create a renderer with Antialiasing ------------
   renderer = new THREE.WebGLRenderer({antialias:true});
   renderer.setClearColor(0x000000);
@@ -65,6 +65,7 @@ function drawFrame(){
 
   //for each
 cubes.forEach(function(c,i) {
+  //Continuously rotate the mesh
   c.rotation.x += rot;
 });
 // Render the scene

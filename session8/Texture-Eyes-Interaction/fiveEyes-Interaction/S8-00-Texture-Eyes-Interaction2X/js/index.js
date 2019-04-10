@@ -139,6 +139,7 @@ function render() {
 		if (mouseY<35) eyes[4].rotation.x = map_range(mouseY, 0, 35, -0.5, 0);
 		else eyes[4].rotation.x = map_range(mouseY, 35, window.innerHeight, 0, 1.14);
   }
+	// Render the scene
 	renderer.render( scene, camera );
 }
 
