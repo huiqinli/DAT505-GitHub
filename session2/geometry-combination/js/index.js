@@ -12,7 +12,7 @@ camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight,
 var renderer = new THREE.WebGLRenderer({antialias:true});
 
 // Configure renderer clear color
-renderer.setClearColor("#C48888");
+renderer.setClearColor("#0c212b");
 
 // Configure renderer size
 renderer.setSize( window.innerWidth, window.innerHeight );
