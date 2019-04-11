@@ -1,7 +1,7 @@
 var renderer, scene, camera, system;
 
 var container = document.getElementById("container");
-
+var planetRot;
 
 function init() {
 renderer = new THREE.WebGLRenderer({antialias:true});
@@ -64,17 +64,13 @@ for (var p = 0; p < Math.PI * 2; p = p + Math.random() * 0.2) {
 
 system.add(asteroids);
 
-system.rotation.x = 0.1;
-system.rotation.y = -0.3;
-system.rotation.z = -0.4;
-
 scene.add(system);
 
 //create small points
 for (i = 0; i < 20; i++) {
   particles = new THREE.Points(
     new THREE.Geometry(),
-    new THREE.PointsMaterial({size: Math.random() * 5})
+    new THREE.PointsMaterial({size: Math.random() * 10})
   );
   for (j = 0; j < 20; j++) {
     var vertex = new THREE.Vector3();
@@ -91,10 +87,9 @@ var render = function () {
   requestAnimationFrame(render);
   //Continuously rotate the planet and asteroids
 
-  //planet.rotation.y += 0.001;
-  //planet.rotation.z -= 0.0005;
+  system.rotation.y += 0.005;
 
-  //asteroids.rotation.y += 0.003;
+
   // Render the scene
   renderer.render(scene, camera);
 };
