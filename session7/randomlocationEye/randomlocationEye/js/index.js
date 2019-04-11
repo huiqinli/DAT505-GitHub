@@ -9,7 +9,8 @@ var eyes = [];
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
-
+var rotX = [];
+var rotY = [];
 
 
 
@@ -31,7 +32,7 @@ function init() {
 	var light = new THREE.PointLight( 0xffffff, 1 );
 	camera.add( light );
 
-	for(s = 0; s < 8; s ++){
+	for(s = 0; s < 30; s ++){
 		//create a sphere
 		var geometry = new THREE.SphereGeometry( 30, 32, 16 );
 		var material = new THREE.MeshPhongMaterial( {
@@ -44,7 +45,6 @@ function init() {
 
 		// modify UVs to accommodate MatCap texture
 
-
 		var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
 		for ( i = 0; i < faceVertexUvs.length; i ++ ) {
 			var uvs = faceVertexUvs[ i ];
@@ -55,17 +55,23 @@ function init() {
 			}
 		}
 
-		for( var i = 0; i < 50; i ++){
-			mesh = new THREE.Mesh( geometry, material );
-			mesh.position.x = Math.random()*1000 - 500;
-			mesh.position.y = Math.random()*1000 - 500;
-			mesh.position.z = Math.random()*1000 - 500;
 
-			//add mesh to the scene
-			scene.add(mesh);
-			eyes.push(mesh);
-		}
+		var mesh = new THREE.Mesh( geometry, material );
+		mesh.position.x = (Math.random()*-200)+70;
+		mesh.position.y = (Math.random()*-50)+30;
+		mesh.scale.x = mesh.scale.y = mesh.scale.z = (Math.random() * -3) +1;
+
+		var rotValX = (Math.random()* 0.1) - 0.25;
+		var rotValY = (Math.random()* 0.1) - 0.25;
+
+		rotX.push(rotValX);
+		rotY.push(rotValY);
+
+		//add mesh to the scene
+		scene.add(mesh);
+		eyes.push(mesh);
 	}
+
 	// Create a renderer with Antialiasing ------------
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
@@ -85,10 +91,12 @@ function render() {
 	console.log(window.innerHeight)
 
 	eyes.forEach(function(c,i){
+		eyes[i].rotation.x += rotX;
+		eyes[i].rotation.y += rotY;
 		eyes[i].rotation.x = mouseY/window.innerHeight*2;
 		eyes[i].rotation.y = mouseX/window.innerWidth*2;
 	});
-	
+
 
 	// Render the scene
 	renderer.render( scene, camera );
@@ -104,6 +112,6 @@ function onWindowResize() {
 
 function onDocumentMouseMove( event ) {
 	console.log(event.clientX);
-	mouseX = event.clientX;
-	mouseY = event.clientY;
+	mouseX = event.clientX - windowHalfX;;
+	mouseY = event.clientY - windowHalfY;
 }
