@@ -86,7 +86,8 @@ for (i = 0; i < 20; i++) {
 var render = function () {
   requestAnimationFrame(render);
   //Continuously rotate the system and particals
-  system.rotation.y += -0.004;
+  system.rotation.y += 0.002;
+
 
   particles.rotation.y += 0.003;
   particles.rotation.z += 0.003;
