@@ -1,7 +1,7 @@
 var renderer, scene, camera, system;
 
 var container = document.getElementById("container");
-var planetRot;
+
 
 function init() {
 renderer = new THREE.WebGLRenderer({antialias:true});
@@ -85,9 +85,11 @@ for (i = 0; i < 20; i++) {
 }
 var render = function () {
   requestAnimationFrame(render);
-  //Continuously rotate the planet and asteroids
+  //Continuously rotate the system and particals
+  system.rotation.y += -0.004;
 
-  system.rotation.y += 0.005;
+  particles.rotation.y += 0.003;
+  particles.rotation.z += 0.003;
 
 
   // Render the scene
