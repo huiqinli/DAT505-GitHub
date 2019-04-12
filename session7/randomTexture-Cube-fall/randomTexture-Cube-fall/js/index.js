@@ -89,18 +89,6 @@ for (var i=0; i<cubes.length; i++){
 
 
 
-	// Rotate the x position of the mesh by 0.03
-	//cubes[i].rotation.x += speed[i] / 100;
-	// Rotate the y position of the mesh by 0.02
-  //cubes[i].rotation.y += speed[i] / 60;
-
-	//Move the mesh towards the bottom of the screen
-	//cubes[i].position.y -= speed[i];
-
-	//If the mesh passes the bottom of the screen,
-	//make it appear on the top. Also x position is randomized
-
-
 	// Render everything using the created renderer, scene, and camera
 	renderer.render( scene, camera );
 }

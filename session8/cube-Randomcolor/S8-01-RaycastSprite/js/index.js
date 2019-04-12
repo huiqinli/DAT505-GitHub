@@ -62,7 +62,7 @@ function animate() {
   renderer.render( scene, camera );
   requestAnimationFrame( animate );
 }
-
+//reset parameters of camera
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();

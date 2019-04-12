@@ -79,6 +79,7 @@ function init() {
   window.addEventListener( 'resize', onWindowResize, false );
 }
 
+//reset parameters of camera
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();

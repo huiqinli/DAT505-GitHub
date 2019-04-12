@@ -39,7 +39,7 @@ function init() {
 
     var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
-
+//load OBJ
   		objLoader.load("shark.obj", function(mesh){
   			mesh.traverse(function(node){
   				if( node instanceof THREE.Mesh ){
@@ -73,6 +73,7 @@ function init() {
   window.addEventListener( 'resize', onWindowResize, false );
 }
 
+//reset parameters of camera
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();

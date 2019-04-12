@@ -143,6 +143,7 @@ function render() {
 	renderer.render( scene, camera );
 }
 
+//reset parameters of camera
 function onWindowResize() {
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
