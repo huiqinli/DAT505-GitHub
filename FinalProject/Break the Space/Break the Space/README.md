@@ -1,3 +1,14 @@
+# DAT505-GitHub
+
+Final Project
+=======================
+Break the Space
+----------------------
+
+This code creates a scene, a camera, a planetary system and destructive figures.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and destructive figures within the scene for the camera. My concept is that the distinct figures which resemble "noise" can exert influence on the planetary system. When the mouse moves, the figure appears as if the system has peeled off to reveal another space.
+
+
+
 var renderer, scene, camera, system;
 var stats, objects;
 var particlesR = 100;
@@ -6,6 +17,7 @@ var colors = [];
 var color = new THREE.Color();
 var clock = new THREE.Clock();
 var geometry1 = new THREE.BufferGeometry();
+
 
 
 if ( WEBGL.isWebGLAvailable() === false ) {
@@ -22,10 +34,10 @@ function init() {
 
   var container = document.getElementById("container");
 
-  // Create a renderer with Antialiasing
+// Create a renderer with Antialiasing
   renderer = new THREE.WebGLRenderer({antialias:true});
 
-  // Configure renderer size
+    // Configure renderer size
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   // Configure renderer clear color
@@ -34,18 +46,13 @@ function init() {
   // Append Renderer to DOM
   document.body.appendChild(renderer.domElement);
 
-  // Append Renderer to container
+    // Append Renderer to container
   container.appendChild( renderer.domElement );
 
-  // planetary system
   system = new THREE.Group();
 
   stats = new Stats();
   container.appendChild( stats.dom );
-
-
-
-
 
   //create light
   var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.2 );
@@ -58,7 +65,8 @@ function init() {
   window.addEventListener( 'resize', onWindowResize, false );
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
+-----------------------------------------------------------------------------------
+`this part is responsible for the building of a planetary system, including a planet and the surrounding asteriods, along with small particles in the background`
   // Create a planet Mesh with material
   var geometry = new THREE.IcosahedronGeometry(100, 3);
 
@@ -66,22 +74,20 @@ function init() {
 
   var planet = new THREE.Mesh(geometry, material);
 
-  //set the zoom of planet
+  `set the zoom of the planet`
   for (var i = 0; i < planet.geometry.vertices.length; i++)
   planet.geometry.vertices[i].multiplyScalar(Math.random() * 0.05 + 0.75);
 
   planet.geometry.computeFlatVertexNormals();
 
-
   system.add(planet);
 
-  //create surroundings of the planet
   var asteroids = new THREE.Group();
 
   for (var p = 0; p < Math.PI * 2; p = p + Math.random() * 0.2) {
     var asteroid = new THREE.Mesh(new THREE.IcosahedronGeometry(8,0),material);
 
-    //set the zoom of asteriod
+    `set the zoom of asteriod`
     var size = Math.random() * 0.6;
     for (var i = 0; i < asteroid.geometry.vertices.length; i++)
     asteroid.geometry.vertices[i].multiplyScalar(Math.random() * 0.7 + size);
@@ -94,10 +100,10 @@ function init() {
   }
 
   system.add(asteroids);
-  // Add system to scene
+
   scene.add(system);
 
-  //create small points
+
   for (i = 0; i < 30; i++) {
     particles = new THREE.Points(
       new THREE.Geometry(),
@@ -113,8 +119,9 @@ function init() {
     }
     scene.add(particles);
   }
+-----------------------------------------------------------------------------------------------
+`Here the destructive objects are produced with different colors and they are designed to spread randomly on the screen`
 
-  //create the destructive objects
   for ( var s = 0; s < particlesR; s ++ ) {
     // positions
     var positionX = Math.random() * 100 - 50;
@@ -137,6 +144,8 @@ function init() {
   objects = new THREE.Points( geometry1, material1 );
   scene.add( objects );
 }
+----------------------------------------------------------------------------
+`this part illustrates the position and the density of destructive objects`
 
 var delta = 0.0;
 
@@ -166,7 +175,7 @@ function onDocumentMouseMove( event ) {
     scene.add( objects );
   }
 }
-
+-----------------------------------------------------------------------------------------------
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -178,7 +187,8 @@ function animate() {
   render();
   stats.update();
 }
-
+---------------------------------------------------------------------------------
+`this part is written to make sure that various elements rotate continuously`
 var render = function () {
   requestAnimationFrame(render);
   //Continuously rotate the system and particals
@@ -190,13 +200,13 @@ var render = function () {
 
   var time = Date.now() * 0.001;
   objects.scale.x += 0.7;
-  objects.scale.y += 0.9;
+  objects.scale.y += 0.7;
   objects.scale.z += 0.2;
 
   if(objects.scale.x < 0.03){
     scene.remove(objects);
   }
-
+---------------------------------------------------------------------------------
   // Render the scene
   renderer.render(scene, camera);
 }
