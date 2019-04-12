@@ -6,7 +6,7 @@
 
 ```
 
-This code creates a scene, a camera, a lighting system, a city full of wireframe geometries and can be appreciated from various perspectives. It adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
+This code creates a scene, a camera, a lighting system and a city full of wireframe geometries and can be appreciated from various perspectives. It adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
 
 ```javascript
 
@@ -53,6 +53,7 @@ function setupThreeJS() {
 
   document.body.appendChild( renderer.domElement );
 
+//record parameters
   clock = new THREE.Clock();
   controls = new THREE.FirstPersonControls(camera);
   controls.movementSpeed = 100;

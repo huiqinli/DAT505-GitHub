@@ -52,7 +52,7 @@ function init() {
 
       // Create a cube Mesh with material ---------
      `geometries select from 12 pictures randomly`
-     
+
       var boxGeometry = new THREE.ConeGeometry(2, 2, 3, 100);
 
       var texture =  new THREE.TextureLoader().load( "textures/texture"+ Math.floor(Math.random()*12) +".jpg" );
@@ -96,7 +96,7 @@ function drawFrame(){
   requestAnimationFrame(drawFrame);
   //scaleCube += 0.02
   //if (scaleCube >8) scaleCube = -5;
-
+`each geometry rotate in a similar speed`
   cubes.forEach(function(c,i) {
   //Continuously rotate the mesh
   c.rotation.x += 0.7;

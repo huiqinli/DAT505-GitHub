@@ -6,7 +6,7 @@
 
 ```
 
-This code creates a scene, a camera, eyes which are positioned randomly and can follow the movement of a mouse. It adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it animates the geometries within the scene for the camera.
+This code creates a scene, a camera, eyes which are positioned randomly and can follow the movement of a mouse. It adds the eyes to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it animates the geometries within the scene for the camera.
 
 ```javascript
 
@@ -53,7 +53,7 @@ function init() {
 
 
 		// modify UVs to accommodate MatCap texture
-
+    `adjust the texture to the geometry`
 		var faceVertexUvs = geometry.faceVertexUvs[ 0 ];
 		for ( i = 0; i < faceVertexUvs.length; i ++ ) {
 			var uvs = faceVertexUvs[ i ];
@@ -98,7 +98,7 @@ function animate() {
 
 function render() {
 	console.log(window.innerHeight)
-
+`each geometry rotate in a similar speed`
 	eyes.forEach(function(c,i){
 		eyes[i].rotation.x += rotX;
 		eyes[i].rotation.y += rotY;

@@ -4,7 +4,7 @@
 <script src="js/dat.gui.min.js"></script>
 
 ```
-This code creates a scene, a camera, a scale GUI controllera, a wireframe geometry and a sphere with a special texture in the middle, and it adds the geometries to the scene. They are designed in certain positions to express an aesthetic concept of  movement balance. Both 0f them are rotating. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
+This code creates a scene, a camera, a scale GUI controller, a wireframe geometry and a sphere with a special texture in the middle, and it adds the geometries to the scene. They are designed in certain positions to express an aesthetic concept of  movement balance. Both 0f them are rotating. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
 
 ```javascript
 
@@ -58,6 +58,7 @@ function geometry(){
   var texture = new THREE.TextureLoader().load( "textures/texture.jpg" );
   material2 = new THREE.MeshBasicMaterial( { map: texture} );
 
+//
   geometry2 = new THREE.SphereGeometry(600, 600, 600);
   mesh1 = new THREE.Mesh( geometry2, material2 );
   mesh1.position.z = -8000;

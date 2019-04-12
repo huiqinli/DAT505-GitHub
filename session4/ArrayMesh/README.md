@@ -13,7 +13,7 @@ This code creates a scene, a camera, lights, an array of geometry and different 
 var renderer, scene, camera;
 var controls;
 var torusbuffers = [];
-var rot = 0;
+var rot = 0;//initial value
 
 function init() {
   // Create an empty scene --------------------------
@@ -90,6 +90,7 @@ function init() {
   document.body.appendChild(renderer.domElement);
 }
 
+`each geometry rotate in similar speed`
 function drawFrame(){
   requestAnimationFrame(drawFrame);
 

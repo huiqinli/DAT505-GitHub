@@ -51,6 +51,7 @@ function geometry(){
   var texture = new THREE.TextureLoader().load( "textures/texture.jpg" );
   material2 = new THREE.MeshBasicMaterial( { map: texture} );
 
+// Create a sphere Mesh with basic material 
   geometry2 = new THREE.SphereGeometry(600, 600, 600);
   mesh1 = new THREE.Mesh( geometry2, material2 );
   mesh1.position.z = -8000;

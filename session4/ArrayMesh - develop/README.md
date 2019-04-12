@@ -6,7 +6,7 @@
 
 ```
 
-This code creates a scene, a camera, lights, geometries, and it shows how colourful geometries change in size. Orders are given for each geometry to rotate, it adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
+This code creates a scene, a camera, lights, geometries, and it shows how geometries change in size and color. Orders are given for each geometry to rotate.it adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
 
 ```javascript
 
@@ -46,7 +46,7 @@ function init() {
   //renderer.shadowMapEnabled = true;
 
   //Create a two dimensional grid of objects, and position them accordingly
-  for (var x = -10; x <= 10; x += 5) { // Start from -45 and sequentially add one every 5 pixels
+  for (var x = -10; x <= 10; x += 5) { // Start from -10 and sequentially add one every 5 pixels
     for (var y = -10; y <= 10; y += 5) {
 
       var boxGeometry = new THREE.ConeGeometry(2, 2, 3, 100);

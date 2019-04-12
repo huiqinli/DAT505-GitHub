@@ -7,7 +7,7 @@ this project shows a world full of whales, and they can make a sound when clicke
 
 ```
 
-This code creates a scene, a camera, a world full of whales, and they can make a sound when clicked by a mouse. It adds the geometries to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the OBJ within the scene for the camera.
+This code creates a scene, a camera, a world full of whales, and they can make a sound when clicked by a mouse. It adds the whales to the scene. It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the OBJ within the scene for the camera.
 
 ```javascript
 
@@ -117,6 +117,9 @@ function animate() {
 function render() {
   //Auto rotate camera
   theta += 0.1;
+
+  `The camera rotates around a circle of radius 100 on the Y-axis`
+
   camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
   camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
   camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
@@ -136,7 +139,7 @@ function render() {
       INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
       INTERSECTED.material.emissive.setHex( Math.random() * 0xFFFFFF );
 
-`load sound and each time plays once`
+      `load sound and each time plays once`
 
       audioLoader.load( 'audio/beastcalm.wav', function( buffer ) {
         sound.setBuffer( buffer );

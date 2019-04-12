@@ -82,7 +82,7 @@ function animate() {
 	// 	(thus creating an infinite loop)
 	requestAnimationFrame( animate );
 
-
+`cubes change according to the condition`
 //for (var i=0; i<cubesNum; i++){
 for (var i=0; i<cubes.length; i++){
 	cubes[i].rotation.x += 0.02;
@@ -94,7 +94,7 @@ for (var i=0; i<cubes.length; i++){
 		cubes[i].position.x = (Math.random() * -20) +10;
 		cubes[i].scale.x = (Math.random() * -2) + 1;
 		cubes[i].scale.y = Math.random();
-		cubes[i].scale.z = Math.random() ;
+		cubes[i].scale.z = Math.random();
 	}
 }
 

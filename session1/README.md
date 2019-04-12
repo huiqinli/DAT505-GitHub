@@ -2,7 +2,7 @@
 ```html
 <script src="js/three.js"></script>
 ```
-This code creates a scene, a camera, two planets and an UFO, and it adds the geometries to the scene. 11 geometries are combined to create a new look of  geometries, especially in the case of the UFO. Both 0f them are rotating.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
+This code creates a scene, a camera, two planets and an UFO, and it adds the geometries to the scene. 11 geometries are combined to create new looks of geometries, especially in the case of the UFO. Both 0f them are rotating.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the geometries within the scene for the camera.
 
 ```javascript
 

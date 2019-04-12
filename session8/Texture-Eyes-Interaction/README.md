@@ -122,7 +122,7 @@ function animate() {
 	render();
 }
 
-`sst the width and height of the screen and adjust parameters of
+`set the width and height of the screen and adjust parameters of
 different eyes to make sure they will not over-rotate`
 
 function render() {

@@ -1,7 +1,7 @@
 var renderer, scene, camera;
 var controls;
 var torusbuffers = [];
-var rot = 0;
+var rot = 0; //initial value
 
 function init() {
   // Create an empty scene --------------------------

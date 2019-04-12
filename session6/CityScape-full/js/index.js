@@ -42,6 +42,7 @@ function setupThreeJS() {
 
   document.body.appendChild( renderer.domElement );
 
+//record parameters
   clock = new THREE.Clock();
   controls = new THREE.FirstPersonControls(camera);
   controls.movementSpeed = 100;

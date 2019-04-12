@@ -33,11 +33,11 @@ function init() {
   //renderer.shadowMapEnabled = true;
 
   //Create a two dimensional grid of objects, and position them accordingly
-  for (var x = -35; x <= 40; x += 5) { // Start from -45 and sequentially add one every 5 pixels
+  for (var x = -35; x <= 40; x += 5) { // Start from -35 and sequentially add one every 5 pixels
     for (var y = -35; y <= 40; y += 5) {
 
 
-      // Create a cube Mesh with material ---------
+      // Create a cube Mesh with random color ---------
         var cubeGeometry = new THREE.CubeGeometry(2, 2, 3);
         var cubeMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xFFFFFF});
 

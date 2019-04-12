@@ -109,8 +109,8 @@ var material9 = new THREE.MeshBasicMaterial( { map: texture} );
 var material = new THREE.MeshPhysicalMaterial({
 
 */
-`different meshes based on the shapes of geometries above,
-position them differently but deliberately to make a harmonious picture  `
+`create different meshes based on the geometries above, position
+them differently but designedly to make a harmonious picture  `
 
 var mesh1 = new THREE.Mesh( geometry1, material );
 mesh1.position.z = -1000;
