@@ -59,6 +59,7 @@ function init() {
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
+
   // Create a planet Mesh with material
   var geometry = new THREE.IcosahedronGeometry(100, 3);
 
@@ -133,7 +134,7 @@ function init() {
   geometry1.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
   geometry1.computeBoundingSphere();
 
-  var material1 = new THREE.PointsMaterial( { size: 2, vertexColors: THREE.VertexColors, opacity:1 } );
+  var material1 = new THREE.PointsMaterial( { size: 2, vertexColors: THREE.VertexColors} );
   objects = new THREE.Points( geometry1, material1 );
   scene.add( objects );
 }
@@ -161,11 +162,14 @@ function onDocumentMouseMove( event ) {
     geometry1.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
     geometry1.computeBoundingSphere();
 
-    var material1 = new THREE.PointsMaterial( { size: 35, vertexColors: THREE.VertexColors } );
+    var material1 = new THREE.PointsMaterial( { size: 35, vertexColors: THREE.VertexColors} );
     objects = new THREE.Points( geometry1, material1 );
     scene.add( objects );
+
+
   }
 }
+
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
