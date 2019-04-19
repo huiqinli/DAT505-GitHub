@@ -5,7 +5,7 @@
 `Make some noise`
 ----------------------
 
-`This code creates a scene, a camera, a planetary system and 'noise' objects.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a real person, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings.`
+`This code creates a scene, a camera, a planetary system and 'noise' objects.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a real person, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even line up to show a path. `
 
 
 
@@ -46,7 +46,7 @@ function init() {
 
   `Performance monitoring`
   stats = new Stats();
-  
+
   var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.2 );
   scene.add(ambientLight);
 

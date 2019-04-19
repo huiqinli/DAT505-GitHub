@@ -30,14 +30,15 @@ function init() {
   renderer.setClearColor(0x000000);
 
   // Append Renderer to DOM
-  document.body.appendChild(renderer.domElement);
+  var content = document.getElementById("container");
+  document.getElementById("container").appendChild(renderer.domElement);
 
   // Create a planetary system
   system = new THREE.Group();
 
   // Performance monitoring
   stats = new Stats();
-  
+
   //Create lights
   var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.2 );
   scene.add(ambientLight);
@@ -49,7 +50,7 @@ function init() {
   // Add listenerS to control the camera
   window.addEventListener( 'resize', onWindowResize, false );
 
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+ document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
   // Create a planet Mesh with material
