@@ -5,7 +5,7 @@
 `Make some noise`
 ----------------------
 
-`This code creates a scene, a camera, a planetary system and 'noise' objects.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a real person, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. `
+`This code creates a scene, a camera, a planetary system and 'noise' objects.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a sentient being, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. `
 
 
 
@@ -59,7 +59,7 @@ function init() {
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   -----------------------------------------------------------------------------------
   `this part is responsible for the building of a planetary system, including a
-  planet and the surrounding asteriods, along with small particles in the background`
+  planet and the surrounding asteriods, as well as small particles in the background`
 
   var geometry = new THREE.IcosahedronGeometry(100, 3);
 
@@ -80,7 +80,7 @@ function init() {
   for (var p = 0; p < Math.PI * 2; p = p + Math.random() * 0.2) {
     var asteroid = new THREE.Mesh(new THREE.IcosahedronGeometry(8,0),material);
 
-    `set the zoom of asteriod`
+    `set the zoom of asteriod, when they move to the front, they will look near`
     var size = Math.random() * 0.6;
     for (var i = 0; i < asteroid.geometry.vertices.length; i++)
     asteroid.geometry.vertices[i].multiplyScalar(Math.random() * 0.7 + size);
