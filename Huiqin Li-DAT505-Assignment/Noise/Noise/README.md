@@ -2,10 +2,10 @@
 
 `Final Project`
 =======================
-`Make some noise`
+`Make Some Noise`
 ----------------------
 
-`This code creates a scene, a camera, a planetary system and 'noise' objects.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a sentient being, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. `
+`This code creates a scene, a camera, a planetary system and a 'noise' object.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera. My concept is that the planet is like a sentient being, when the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. `
 
 
 
@@ -19,13 +19,14 @@ var clock = new THREE.Clock();`Create a clock to record time`
 var geometry1 = new THREE.BufferGeometry();`Create 'noise'`
 
 
-
+--------------------------------------------------------------------------------------------
 if ( WEBGL.isWebGLAvailable() === false ) {
   document.body.appendChild( WEBGL.getWebGLErrorMessage() );
 }
 
 `this part creates an empty scene, a basic perspective camera, a renderer with Antialiasing,
 renderer size and color, the ambientLight and DirectionalLight, a system group`
+
 function init() {
 
   scene = new THREE.Scene();
@@ -58,7 +59,7 @@ function init() {
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   -----------------------------------------------------------------------------------
-  `this part is responsible for the building of a planetary system, including a
+  `this part is responsible for the construction of a planetary system, including a
   planet and the surrounding asteriods, as well as small particles in the background`
 
   var geometry = new THREE.IcosahedronGeometry(100, 3);
@@ -130,7 +131,7 @@ function init() {
       color.setRGB( vpositionX, vpositionY );
       colors.push( color.r, color.g, color.b );
     }
-
+    `noise`
     geometry1.addAttribute( 'position', new THREE.Float32BufferAttribute( positions, 3 ) );
     geometry1.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
     geometry1.computeBoundingSphere();
