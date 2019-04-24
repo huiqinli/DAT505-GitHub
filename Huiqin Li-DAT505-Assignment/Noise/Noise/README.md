@@ -1,4 +1,7 @@
 # DAT505-GitHub
+this is Huiqin Li's project.
+my github link: https://github.com/huiqinli/DAT505-GitHub				
+
 
 `Final Project`
 =======================
