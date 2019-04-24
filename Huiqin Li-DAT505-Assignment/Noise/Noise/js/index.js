@@ -159,7 +159,7 @@ function onDocumentMouseMove( event ) {
 
     color.setRGB( vpositionX, vpositionY );
     colors.push( color.r, color.g, color.b );
-
+    //noise
     geometry1.addAttribute( 'position', new THREE.Float32BufferAttribute( positions, 3 ) );
     geometry1.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
     geometry1.computeBoundingSphere();
