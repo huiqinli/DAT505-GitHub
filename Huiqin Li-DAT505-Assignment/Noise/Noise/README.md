@@ -9,7 +9,7 @@ my github link: https://github.com/huiqinli/DAT505-GitHub
 ----------------------
 
 `This code creates a scene, a camera, a planetary system and a 'noise' object.It then creates a WebGL renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it renders the system and 'noise' within the scene for the camera.
-My concept is that the planet is like a sentient being, when something happens, it get feelings. When the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. The project shows a perspective to connect. `
+My concept is that the planet is like a sentient being, when something happens, it get feelings. When the mouse moves, the 'noise' appears from the middle of the planet as if the planet is making some noise and expressing its feelings. if you use the mouse to draw a circle on the screen, the tracks of noise will be more regular. When the mouse moves continuously, the noise becomes ‘denser’ and some of the parts even connect and line up to show a path. If u wait for a while then move the mouse, its sense will be less accute because it feels neglected. The project shows a perspective to connect. `
 
 
 
